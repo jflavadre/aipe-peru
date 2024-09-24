@@ -1,0 +1,39 @@
+---
+import CompanyStory from "../components/about/CompanyStory.astro";
+import SuzukiStory from "../components/about/SuzukiStory.astro";
+import Navbar from "../components/home/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+
+interface Props {
+	isBackGroundImage?: boolean;
+}
+
+const { isBackGroundImage = true } = Astro.props;
+---
+
+<Layout title="私たちについて">
+	<Navbar isBackGroundImage />
+	<div class="container-lg m-2 bg-neutral-100 py-16">
+		<div class="text-center">
+			<h1 class="text-orange-900 text-opacity-30 text-5xl font-semibold">
+				STORY
+			</h1>
+			<h2 class="lg:text-4xl text-3xl my-10 font-semibold text-gray-800 ">AIPEと鈴木さんの紹介</h2>
+			<div class="lg:mx-60 m-3 text-left text-gray-500 leading-7">
+				<CompanyStory />
+			</div>
+		</div>
+		<div class="border-b border-neutral-300 mx-2 lg:mx-20 my-20"></div>
+		<div class="flex flex-col lg:flex-row lg:mx-20 gap-10">
+			<div class="flex basis-1/2 justify-center items-center mx-5">
+				<img
+					src="https://a9006bac37.cbaul-cdnwnd.com/008f4c70e4c24778ea7247c646d46f31/200000009-6220162204/suzukisan.webp?ph=a9006bac37"
+					alt=""
+				/>
+			</div>
+			<div class="basis-1/2 text-gray-500 m-2 leading-7">
+				<SuzukiStory />
+			</div>
+		</div>
+	</div>
+</Layout>

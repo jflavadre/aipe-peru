@@ -1,0 +1,50 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ToTheDark from "../../components/home/ToTheDark.astro";
+import PrincipalContents from "../../components/home/PrincipalContents.astro";
+import Navbar from "../../components/home/Navbar.astro";
+import CompanyIntro from "../../components/home/CompanyIntro.astro";
+---
+
+<Layout title=" Index">
+	<div class="relative bg-black m-2">
+		<img class="md:hidden opacity-80" src="/images/farm-sunset.jpeg" alt="" />
+		<img class="md:block hidden opacity-80" src="/images/sunset.jpeg" alt="" />
+		<div class="absolute top-0 right-0">
+			<Navbar />
+		</div>
+	</div>
+	<div class="container-lg m-2 bg-neutral-100 py-16 text-center">
+		<h4 class="text-md font-semibold">〜 Bienvenido 〜</h4>
+		<h1 class="text-gray-950 text-5xl font-semibold">La granja AIPE</h1>
+		<h2
+			class="lg:text-3xl text-2xl mt-11 mb-2 text-orange-900 text-opacity-50 italic"
+		>
+			Cultivamos con pasion
+		</h2>
+		<div class="lg:mx-auto md:mx-20 lg:max-w-[700px] text-gray-500 leading-7">
+			<div class="m-3 text-left lg:text-lg">
+				<CompanyIntro />
+			</div>
+		</div>
+		<a
+			href="/about"
+			class="inline-block text-gray-500 border-orange-300 px-10 py-3 border hover:text-orange-300 text-sm"
+			>もっと読む...</a
+		>
+	</div>
+
+	<ToTheDark />
+
+	<PrincipalContents />
+</Layout>
+
+<!-- <script>
+	let bossUrl = document.URL.slice(0, document.URL.length - 2);
+	let langUrl = document.URL.slice(-2);
+	alert(bossUrl);
+	alert(langUrl);
+	location.replace(bossUrl)
+	document.cookie = 'lang=es';
+	// window.location.href("転送先URL");
+</script> -->

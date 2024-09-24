@@ -1,0 +1,70 @@
+---
+import Navbar from "../components/home/Navbar.astro";
+import PirarucuStory from "../components/product/PirarucuStory.astro";
+import CamucamuStory from "../components/product/CamucamuStory.astro";
+import PowerfoodStory from "../components/product/PowefoodStory.astro"
+import Layout from "../layouts/Layout.astro";
+
+interface Props {
+	isBackGroundImage?: boolean;
+}
+
+const { isBackGroundImage = true } = Astro.props;
+---
+
+<Layout title="商品一覧">
+	<Navbar isBackGroundImage />
+	<!-- /* -------------------------------------------------------------------------- */ -->
+	<div class="container-lg m-2 bg-neutral-100">
+		<div class="flex flex-col lg:flex-row py-20">
+			<div class="basis-1/3 flex flex-col items-center justify-center">
+				<img
+					src="https://www.kaiyukan.com/area/exhibition/dad95c0bd94ab3caaf44ea323b4b5aab3da7350c.jpg"
+					class="lg:w-[230px] lg:h-[230px] w-[333px] h-[333px] object-cover rounded-full"
+					alt="ピラルクの画像"
+				/>
+				<h3 class="text-4xl mt-10 font-semibold text-gray-800">ピラルク</h3>
+			</div>
+			<div class="basis-2/3 m-3 text-gray-500 lg:leading-normal leading-7">
+				<PirarucuStory />
+			</div>
+		</div>
+	</div>
+
+	<!-- /* -------------------------------------------------------------------------- */ -->
+	<div class="container-lg m-2">
+		<div class="flex flex-col lg:flex-row py-20">
+			<div class="basis-1/3 flex flex-col items-center justify-center">
+				<img
+					src="/images/camucamu.jpg"
+					class="lg:w-[230px] lg:h-[230px] w-[333px] h-[333px] object-cover rounded-full"
+					alt="ピラルクの画像"
+				/>
+				<h3 class="text-4xl mt-10 font-semibold text-gray-800">カムカム</h3>
+			</div>
+			<div class="basis-2/3 m-3 text-gray-500 lg:leading-normal leading-7">
+				<CamucamuStory />
+			</div>
+		</div>
+	</div>
+
+	<!-- /* -------------------------------------------------------------------------- */ -->
+	<div class="container-lg m-2 bg-neutral-100">
+		<div class="flex flex-col lg:flex-row py-20">
+			<div class="basis-1/3 flex flex-col items-center justify-center">
+				<img
+					src="/images/power_food.jpg"
+					class="lg:w-[230px] lg:h-[230px] w-[333px] h-[333px] object-cover rounded-full"
+					alt="ピラルクの画像"
+				/>
+				<h3 class="text-4xl mt-10 font-semibold text-gray-800">パワーフード</h3>
+			</div>
+			<div class="basis-2/3 m-3 text-gray-500 lg:leading-normal leading-7">
+				<PowerfoodStory />
+			</div>
+		</div>
+	</div>
+
+	<div class="container-lg m-3"></div>
+	<div class="container-lg m-3 bg-neutral-100"></div>
+</Layout>

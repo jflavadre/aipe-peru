@@ -1,0 +1,19 @@
+---
+import Navbar from "../components/home/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+
+interface Props {
+	isBackGroundImage?: boolean;
+}
+
+const { isBackGroundImage = true } = Astro.props;
+---
+
+<Layout title="ありがとうございました">
+	<Navbar isBackGroundImage />
+	<div class="container-lg m-2 bg-neutral-100">
+		<div class="flex items-center justify-center h-96">
+			お問合せをありがとうございました。
+		</div>
+	</div>
+</Layout>
